@@ -1,5 +1,5 @@
 getwd()
-Shootingdata <- read.csv(file = "Data/shootings.csv")
+Shootingsdata <- read.csv(file = "Data/shootings.csv")
 
 treeData <- read.csv(file = "Data/odTRees.csv")
 
@@ -62,6 +62,40 @@ mean(treeData$AGE)
  
  fairTree <- treeData[idx,]
  
+ 
+ idx1<- treeData$CONDITION == "Poor"
+ 
+ PoorTree <- treeData[idx1,]
+ 
+ idx2 <- which( treeData$CONDITION == "Poor")
+sub_meta <- treeData[idx2, ]
+
+
+idx3  <-  treeData$SPECIESTYPE == "Cherry"
+
+idx3 <- which( treeData$SPECIESTYPE == "Cherry")
+cherryTree <- treeData[idx3, ]
+write.csv(cherryTree, file="data/cherryTree.csv")
+
+
+
+head(treeData)
+
+#---------------------------------
+
+Shootingsdata <- read.csv(file = "Data/shootings.csv")
+
+
+# 1   Please plot Deaths by Shooting (Date).
+
+summary (Shootingsdata$date)
+
+# 2  Please plot US Police Shootings Deaths by age
+
+summary (Shootingsdata$age)
+
+
+
 
 
 
@@ -69,3 +103,29 @@ mean(treeData$AGE)
 
 install.packages("tidyverse")
 library(tidyverse)
+
+list[[][]]
+
+
+i <- 1
+dead <- 0
+while (date == Date | i == 31){
+  
+  if (Shootingsdata$manner_of_death == "shot" | 	
+      "shot and Tasered")
+  {
+    
+    dead(i) = dead(i) + 1
+  }
+  
+  
+    
+    
+    
+  i <- i + 1
+  
+}
+
+
+
+
